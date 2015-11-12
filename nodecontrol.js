@@ -31,6 +31,7 @@ http.get({
            console.log(x);
            serialPort.write(x + "x\r\n" /*+ y + "y\r\n"*/, function(err, results) {
 
+
            });
 
        });
