@@ -1,12 +1,12 @@
 var http = require('http');
 
-var requestTime = 100;
+var requestTime = 50;
 var multiplier = 30;
 var port = "/dev/ttyUSB0"
 
 var SerialPort = require("serialport").SerialPort
 var serialPort = new SerialPort(port, {
-  baudrate: 9600
+  baudrate: 19200
 });
 
 
@@ -29,7 +29,7 @@ http.get({
            var x = Math.floor((parsed.x - 0.5) *2 * multiplier);
            var y = Math.floor((parsed.y - 0.5) *2 * multiplier);
            console.log(x);
-           serialPort.write(x + "x\r\n" /*+ y + "y\r\n"*/, function(err, results) {
+           serialPort.write(x + "," + y + ".", function(err, results) {
 
 
            });
