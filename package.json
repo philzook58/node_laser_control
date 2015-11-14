@@ -1,7 +1,7 @@
 {
   "name": "nodehtml",
   "version": "1.0.0",
-  "description": "",
+  "description": "A node file to ping the server and write to serial port.",
   "main": "nodecontrol.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,6 +9,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "serialport": "^2.0.4"
-  }
+    "serialport": "^2.0.4",
+    "socket.io-client": "^1.3.7"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/philzook58/node_laser_control.git"
+  },
+  "bugs": {
+    "url": "https://github.com/philzook58/node_laser_control/issues"
+  },
+  "homepage": "https://github.com/philzook58/node_laser_control#readme"
 }
