@@ -26,8 +26,8 @@ http.get({
            // Data reception is done, do whatever with it!
            var parsed = JSON.parse(body);
            console.log(parsed);
-           var x = floor((parsed.x - 0.5) * 2 * multiplier);
-           var y = floor((parsed.y - 0.5) * 2 * multiplier);
+           var x = Math.floor((parsed.x - 0.5) * 2 * multiplier);
+           var y = Math.floor((parsed.y - 0.5) * 2 * multiplier);
            console.log(x);
            serialPort.write(x + "x\r\n" + y + "y\r\n", function(err, results) {
 
