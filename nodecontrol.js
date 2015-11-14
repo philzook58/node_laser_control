@@ -1,8 +1,8 @@
 var http = require('http');
 
 var requestTime = 50;
-var multiplier = 30;
-var port = "/dev/ttyUSB0"
+var multiplier = 100;
+var port = "/dev/ttyACM0"
 
 var SerialPort = require("serialport").SerialPort
 var serialPort = new SerialPort(port, {
@@ -26,13 +26,14 @@ http.get({
            // Data reception is done, do whatever with it!
            var parsed = JSON.parse(body);
            console.log(parsed);
-           var x = Math.floor((parsed.x - 0.5) *2 * multiplier);
-           var y = Math.floor((parsed.y - 0.5) *2 * multiplier);
+           var x = (parsed.x - 0.5) *2 * multiplier;
+           var y = (parsed.y - 0.5) *2 * multiplier;
            console.log(x);
-           serialPort.write(x + "," + y + ".", function(err, results) {
+           serialPort.write(x + "," + y + ";", function(err, results) {
 
 
            });
+           response.on('error', function(err){ console.log(err);});
 
        });
    });
